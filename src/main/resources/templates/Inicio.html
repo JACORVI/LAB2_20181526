@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns :th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Vista 1</title>
+</head>
+<body>
+<h1> Configuracion del juego de Ahorcado</h1>
+<form th:object="${ahorcados}">
+    <div>
+        <label>Longitud de la palabra:</label>
+        <input type="number" id="longitud" value="longitud">
+    </div>
+    <div>
+        <label>Numero maximo de intentos:</label>
+        <input type="number" id="num" value="num">
+    </div>
+    <div>
+        <label for ="temas">Tema de Juego</label>
+        <select id="temas">
+            <option th:each="tema: ${listaTemas}"
+                    th:value="${tema}"
+                    th:text="${tema}"></option>
+        </select>
+    </div>
+</form>
+
+</body>
+</html>
